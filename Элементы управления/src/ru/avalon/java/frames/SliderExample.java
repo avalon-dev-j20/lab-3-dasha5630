@@ -34,6 +34,12 @@ public class SliderExample extends AbstractFrame {
 
     @Override
     protected void onCreate() {
+        Border border = BorderFactory.createEmptyBorder(25, 25, 25, 25);
+        Container contentPane = getContentPane();
+        if (contentPane instanceof JComponent) {
+            JComponent comp = (JComponent) contentPane;
+            comp.setBorder(border);
+        }
         setTitle("Color Picker");
         setSize(300, 300);
         setLayout(new GridLayout(1, 2));
@@ -41,8 +47,7 @@ public class SliderExample extends AbstractFrame {
         add(onCreateColorPanel());
         add(onCreateSlidersPanel());
 
-        MouseAdapter listener = new MouseEventListener();
-        addMouseMotionListener(listener);
+  
 
         sliderRed.addChangeListener(this::onSliderChange);
         sliderGreen.addChangeListener(this::onSliderChange);

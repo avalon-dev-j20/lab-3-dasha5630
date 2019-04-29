@@ -14,8 +14,8 @@ public class Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //JFrame frame = new MouseEventsExample();
-        JFrame frame = new SliderExample();
+        JFrame frame = new Calculator();
+       // JFrame frame = new SliderExample();
 
         frame.setVisible(true);
     }
